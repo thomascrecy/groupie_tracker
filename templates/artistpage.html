@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/x-icon" href="static\ptitlogo.ico">
+    <title>{{.Artist.Name}} - Groupie Tracker</title>
+</head>
+<body>
+    <div class="header">
+        <div class="button-container-banner">
+            <a href="index.html">
+            <img src="/static/Banner.jpg" style="width: 100%; height: auto;">
+            <!--
+            <h1 onclick="location.href='index.html';">The Groupie Tracker API</h1> 
+            -->
+            </a>
+        </div>
+    </div>
+
+    <h1> </h1>
+
+    <div class="bottom-section">
+
+        <div class="artiste-infos">
+            <div class="artiste-infos-container">
+                <div class="logo-artiste-page">
+                    <img src="{{.Artist.Image}}" alt="{{.Artist.Name}}">
+                </div>
+        
+                <div class="artiste-infos-content">
+                    <div class="basic-info">
+                        <h1>{{.Artist.Name}}</h1>
+        
+                        <h2>📅 Débuts :</h2>
+                        <h3>{{.Artist.CreationDate}}</h3>
+        
+                        <h2>💿 Premier Album :</h2>
+                        <h3>{{.Artist.FirstAlbum}}</h3>
+                    </div>
+                    <div class="members-list">
+                        <h2>🤘 Membres :</h2>
+                        <ul>
+                            {{range .Artist.Members}}
+                                <li>{{.}}</li>
+                            {{end}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="concerts-info">
+                <h1>Prochains concerts :</h1>
+                <ul>
+                    {{range $location, $dates := .ApiRelations.DatesLocations}}
+                        <li>
+                            <h2 class="concert-location">{{ $location }}</h2>
+                            {{range $date := $dates}}
+                                <h3>{{ $date }}</h3>
+                            {{end}}
+                        </li>
+                    {{end}}
+                </ul>
+            </div>
+        </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            let concertsLocations = document.getElementsByClassName("concert-location");
+            for (let i = 0; i < concertsLocations.length; i++) {
+                let loc = concertsLocations[i].textContent.split("-")
+                let city = loc[0][0].toUpperCase() + loc[0].slice(1).replaceAll("_", " ");
+                let country = (loc[1][0].toUpperCase() + loc[1].slice(1)).replaceAll("_", " ");
+                concertsLocations[i].textContent = city + " - " + country; 
+            }
+        })
+
+
+    </script>
+</body>
+</html>

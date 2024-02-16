@@ -1,0 +1,365 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; 
+  /*background-color: #f5f5dc;*/
+  background-color: #272B33;
+}
+
+.bottom-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  margin: 25px 25px;
+}
+.bottom-section li {
+  width: 33%; 
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.header img {
+  width: 100%;
+  height: auto;
+}
+
+.header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  font-size: 70px;
+  text-align: center;
+  cursor: pointer;
+  font-family: Uten;
+}
+
+.button-container {
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.button-container-logo {
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.button-container-logo img {
+  transition: transform 0.3s ease;
+}
+
+.top-section-artiste {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272B33;
+  padding: 20px;
+}
+
+.header-container-artiste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rounded-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff; 
+  color: #000;
+  border: 2px solid #000; 
+  border-radius: 25px; 
+  font-size: 25px; 
+  font-weight: bold; 
+  margin: 0 200px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.textstyle {
+  /*background-color: #e2e2cf;*/
+  background-color: #3C3E44;
+  border: 2px solid #000;
+  font-weight: bold;
+  border-radius: 20px;
+  width: auto;
+  height: auto;
+  padding: 5px 30px 5px 30px;
+  font-size: 25px;
+  text-align: left;
+  margin: 0 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+.textstyle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+label {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+  border-radius: 10px;
+  padding: 5px 5px;
+  font-size: large;
+}
+
+button {
+  background-color: white;
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+}
+
+.button-container button {
+  border: none; 
+  padding: 0; 
+  background: none; 
+  cursor: pointer; 
+}
+
+.button-container img {
+  width: 300px;
+  height: auto;
+  border-radius: 0px; 
+  transition: transform 0.3s ease;
+}
+
+li {
+  list-style: none; 
+  margin-bottom: 20px;
+}
+
+.button-container-logo:hover img {
+  transform: scale(1.1);
+}
+
+.button-container:hover .band-card {
+  transform: scale(1.05);
+}
+
+.button-container .band-card {
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.logo-artiste-page img {
+  width: 250px;
+  height: auto;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  float: left; border-radius:500px;
+  border: #000 80px solid;
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.band-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  margin: 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.band-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 15px;
+  padding-left: 20px;
+  /*background-color: #e2e2cf;*/
+  background-color: #3C3E44;
+  flex: 1;
+}
+
+.band-name {
+  margin: 0 0 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.artiste-type {
+  margin: 0 0 10px;
+  font-weight: bold;
+  text-align: left;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px;
+}
+
+.band-detail-label {
+  width: 100px; /* increase the width to accommodate the longer labels */
+  font-weight: bold;
+  text-align: left;
+  color: rgb(148, 147, 147);
+}
+
+.band-detail-value {
+  text-align: left;
+  color: white;
+}
+
+.artiste-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 20px;
+  flex: 1;
+  color: white;
+}
+
+.artiste-infos h1,
+.artiste-infos h2,
+.artiste-infos h3,
+.artiste-infos li {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.artiste-infos h1 {
+  font-size: 3.5rem;
+}
+
+.artiste-infos h2 {
+  font-size: 2rem;
+}
+
+.artiste-infos h3 {
+  font-size: 1.5rem;
+}
+
+.artiste-infos li {
+  font-size: 1.5rem;
+}
+
+.logo-artiste-page {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.artiste-infos-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.member-list-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  border-left: 1px solid white;
+}
+
+.basic-info {
+  flex: 1;
+}
+
+.members-list {
+  flex: 1;
+  margin-left: 2rem;
+  border-left: 1px solid white;
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .artiste-infos-content {
+      flex-direction: column;
+  }
+
+  .members-list {
+      margin-left: 0;
+      border-left: none;
+      padding-left: 0;
+  }
+}
+
+.artiste-infos-content {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.artiste-infos-container {
+  display: flex;
+}
+
+.locationdate {
+  align-items: center;
+  
+}
+
+.concerts-info ul {
+  display: flex;
+  list-style-type: none; /* Supprime les puces par défaut */
+  padding: 0; /* Supprime l'espacement par défaut */
+  margin: 0; /* Supprime l'espacement par défaut */
+}
+
+.concerts-info li {
+  background-color: #3C3E44;
+  margin-bottom: 25px; /* Ajoute un espacement en bas de chaque élément */
+  border-radius: 50px; /* Ajoute des coins arrondis */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

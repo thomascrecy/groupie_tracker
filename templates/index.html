@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/x-icon" href="static\ptitlogo.ico">
+    <title>Groupie Tracker</title>
+</head>
+<body>
+    <div class="header">
+        <div class="button-container-banner">
+            <a href="index.html">
+            <img src="/static/Banner.jpg" style="width: 100%; height: auto;">
+            </a>
+        </div>
+    </div>
+    <h1> </h1>
+    <div class="bottom-section">
+        <div class="textstyle">
+            Artistes
+            <div>
+                <form action="/search" method="GET">
+                    <input type="search" id="site-search" name="q" />
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <ul>
+            {{range .}}
+            
+            <li class="button-container">
+                <button onclick="redirectToArtistPage('{{.Name}}')" class="book4">
+                    <div class="band-card">
+                        <img src="{{.Image}}" alt="{{.Name}}" class="band-image" style="width: 40%; height: auto;">
+                        <div class="band-info">
+                            <h2 class="band-name">{{.Name}}</h2>
+                            {{if gt (len .Members) 1}}
+                            <h3 class="artiste-type">🎸 Groupe</h3>
+                            {{else}}
+                            <h3 class="artiste-type">🎙️ Chanteur/Chanteuse</h3>
+                            {{end}}
+                            <table>
+                                <tr>
+                                    <td class="band-detail-label">Début:</td>
+                                </tr>
+                                    <td class="band-detail-value">{{.CreationDate}}</td>
+                                <tr>
+                                    <td class="band-detail-label">Premier Album:</td>
+                                </tr>
+                                    <td class="band-detail-value">{{.FirstAlbum}}</td>
+                            </table>
+                        </div>
+                    </div>
+                </button>
+            </li>
+            
+            
+            {{end}}
+        </ul>
+    </div>
+    <script>
+        function redirectToArtistPage(artistName) {
+            window.location.href = '/artistpage.html?artist=' + encodeURIComponent(artistName);
+        }
+    </script>
+</body>
+</html>
